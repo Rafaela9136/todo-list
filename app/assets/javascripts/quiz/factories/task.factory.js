@@ -2,16 +2,14 @@ angular.module('app')
     .factory('TaskFactory', ['$http', function($http) {
         return {
             getTasks: getTasks,
-            createTask: createTask,
-            currentTaskId: 0,
-            finalize: false
-        }
+            createTask: createTask
+        };
 
         function getTasks() {
-            return $http.get('/task')
+            return $http.get('/tasks')
                 .then(handleResponse)
-                .catch(handleError)
-        }
+                .catch(handleError);
+        };
 
         function createTask(task) {
             var req = {
@@ -25,17 +23,16 @@ angular.module('app')
                 }
             }
             return $http(req)
-                .catch(handleError)
-        }
+                .catch(handleError);
+        };
 
         // Handle $http responses
-
         function handleResponse(response) {
-            return response.data
-        }
+            return response.data;
+        };
 
         function handleError(error) {
             console.log(error);
-        }
+        };
 
     }]);

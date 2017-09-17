@@ -5,6 +5,7 @@
             "angular": "v1.5.8",
             "angular-ui-router": "latest",
             "angular-messages": "v1.5.8",
+            "angular-ui-bootstrap-bower": "0.13.4",
             "bootstrap": "~3.0.0"
         }
     }

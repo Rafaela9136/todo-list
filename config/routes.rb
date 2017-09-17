@@ -3,7 +3,4 @@ Rails.application.routes.draw do
   root 'application#index'
 
   resources :tasks, only: [:index, :show, :create, :update, :destroy]
-  resources :quizzes, :questions, :possibilities, only: [:index, :show, :create, :update, :destroy]
-
-  resources :categories, only: [:index]
 end

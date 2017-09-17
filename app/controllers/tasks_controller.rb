@@ -1,8 +1,8 @@
-class TaskController < ApplicationController
+class TasksController < ApplicationController
 
     def index
         tasks = Task.all
-        render json: tasks #, include: ['title','description']
+        render json: tasks, include: ['title','description', 'priority']
      end
 
     def create
@@ -16,7 +16,7 @@ class TaskController < ApplicationController
 
     def show
         task = Task.find(params[:id])
-        render json: task #, include: ['title','description']
+        render json: task, include: ['title','description', 'priority']
     end
 
     def update
@@ -36,6 +36,6 @@ class TaskController < ApplicationController
     private
 
     def task_params
-        params.require(:task).permit(:title, :description)
+        params.require(:task).permit(:title, :description, :priority)
     end
 end

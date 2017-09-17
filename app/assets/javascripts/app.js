@@ -1,1 +1,1 @@
-angular.module('app', ['ui.router', 'templates'], function() {});
+angular.module('app', ['ui.router', 'templates', 'ui.bootstrap'], function() {});

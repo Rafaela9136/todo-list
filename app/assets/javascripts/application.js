@@ -15,6 +15,7 @@
 //= require bootstrap/dist/js/bootstrap
 //= require angular
 //= require angular-ui-router
+//= require angular-ui-bootstrap
 //= require angular-rails-templates
 //= require_tree .
 
