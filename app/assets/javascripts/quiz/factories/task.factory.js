@@ -2,7 +2,9 @@ angular.module('app')
     .factory('TaskFactory', ['$http', function($http) {
         return {
             getTasks: getTasks,
-            createTask: createTask
+            createTask: createTask,
+            deleteTask: deleteTask,
+            updateTask: updateTask
         };
 
         function getTasks() {
@@ -25,6 +27,18 @@ angular.module('app')
             return $http(req)
                 .catch(handleError);
         };
+
+        function deleteTask(task_id) {
+            return $http.delete('/tasks/' + task_id)
+                .then(handleResponse)
+                .catch(handleError);
+        };
+
+        function updateTask(task_id) {
+            return $http.put('/tasks/' + task_id)
+                .then(handleResponse)
+                .catch(handleError);
+        }
 
         // Handle $http responses
         function handleResponse(response) {

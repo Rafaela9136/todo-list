@@ -1,28 +1,14 @@
 angular.module('app')
-	.controller('HomeController', ['$uibModal', 'TaskFactory', function($uibModal, TaskFactory) {
+	.controller('HomeController', ['$scope', '$uibModal', 'TaskFactory', function($scope, $uibModal, TaskFactory) {
 		var vm = this;
 
-		vm.name = "name";
-        
-        vm.get = function() {
-            console.log("Tá chamando");
-            console.log(TaskFactory.getTasks());
-        };
+		vm.openDialog = function() {
+            $uibModal.open({
+                templateUrl: 'quiz/new.html',
+                clickOutsideToClose: true,
+                fullscreen: $scope.customFullscreen,
+                controller: 'TasksController as vm'
+            });
+		};
 
-		/*vm.newTask = function() {
-			console.log("newTask");
-			$uibModal.open({
-                templateUrl: './quiz/new_task.html',
-                backdrop:'static',
-                keyboard:false,
-                controller: function($scope, $modalInstance) {
-                    $scope.cancel = function() {
-                        $modalInstance.dismiss('cancel');
-                    };
-                    $scope.ok = function () {
-                      $modalInstance.close();
-                    };
-                }
-           	});
-		};*/
 	}]);

@@ -12,43 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20170912224430) do
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "possibilities", force: :cascade do |t|
-    t.text     "answer"
-    t.integer  "question_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.text     "text"
-    t.integer  "answered"
-    t.boolean  "selected",   default: false
-    t.boolean  "correct",    default: false
-    t.integer  "answer"
-    t.integer  "quiz_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  create_table "quizzes", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.datetime "created_at",                                                                                                 null: false
-    t.datetime "updated_at",                                                                                                 null: false
-    t.string   "image",       default: "http://cdn2.business2community.com/wp-content/uploads/2015/04/Quiz-300x198.png.png"
-    t.integer  "category_id"
-  end
-
   create_table "tasks", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "priority"
+    t.string   "status"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

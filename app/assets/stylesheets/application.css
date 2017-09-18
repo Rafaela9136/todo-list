@@ -15,7 +15,9 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 body, h1, h2, h3, h4, p, a {
    font-family: 'Lato', sans-serif;
@@ -295,30 +297,24 @@ select {
   min-height: 69px;
 }
 
-body{padding-top:20px}
-
-.pricing-table .plan {
-  margin-left:0px;
-  border-radius: 5px;
+.center {
   text-align: center;
-  background-color: #f3f3f3;
-  -moz-box-shadow: 0 0 6px 2px #b0b2ab;
-  -webkit-box-shadow: 0 0 6px 2px #b0b2ab;
-  box-shadow: 0 0 6px 2px #b0b2ab;
 }
- 
- .plan:hover {
+
+.white {
+  color: white;
+}
+
+.plan:hover {
   background-color: #fff;
   -moz-box-shadow: 0 0 12px 3px #b0b2ab;
   -webkit-box-shadow: 0 0 12px 3px #b0b2ab;
   box-shadow: 0 0 12px 3px #b0b2ab;
 }
  
- .plan {
+.plan {
   padding: 20px;
   margin-left:0px;
-  color: #ff;
-  background-color: #5e5f59;
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
@@ -327,11 +323,11 @@ body{padding-top:20px}
 .plan-name-bronze {
   padding: 20px;
   color: #fff;
-  background-color: #665D1E;
+  background-color: #080808;
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
- }
+}
   
 .plan-name-silver {
   padding: 20px;
@@ -340,7 +336,7 @@ body{padding-top:20px}
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
- }
+}
   
 .plan-name-gold {
   padding: 20px;
@@ -383,20 +379,6 @@ body{padding-top:20px}
   width: 80%;
 }
  
-.pricing-variable-height .plan {
-  float: none;
-  margin-left: 2%;
-  vertical-align: bottom;
-  display: inline-block;
-  zoom:1;
-  *display:inline;
-}
- 
 .plan-mouseover .plan-name {
   background-color: #4e9a06 !important;
-}
- 
-.btn-plan-select {
-  padding: 8px 25px;
-  font-size: 18px;
 }

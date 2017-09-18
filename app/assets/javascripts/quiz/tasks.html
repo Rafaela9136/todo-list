@@ -1,4 +1,4 @@
-<div class="container"> 
+<div class="container center"> 
   <h2>Task list</h2>
   <h4>Get stuff done!!</h4>
   <hr>
@@ -6,13 +6,10 @@
     <div class="plan col-sm-4 col-lg-4">
           <div class="plan-name-bronze">
             <h2>{{t.title}}</h2>
-            <span>$8.99 / Month</span>
+            <p>{{t.description}}</p>
+            <a href="#" class="btn btn-primary-outline btn-lg white" ng-click="vm.solveTask(t.id)"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+            <a href="#" class="btn btn-primary-outline btn-lg white" ng-click="vm.deleteTask(t.id)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
           </div>
-          <ul>
-            <li class="plan-feature">10 Users</li>
-            <li class="plan-feature">5TB Disk Space</li>
-            <li class="plan-feature"><a href="#" class="btn btn-primary btn-plan-select"><i class="icon-white icon-ok"></i> Select</a></li>
-          </ul>
         </div>
   </div>
   <hr>

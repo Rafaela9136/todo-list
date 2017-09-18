@@ -10,11 +10,6 @@ angular.module('app')
                 url: 'index',
                 templateUrl: 'quiz/tasks.html',
                 controller: 'TasksController as vm'
-            })
-            .state('home.new_tasks', {
-                url: 'new_tasks',
-                templateUrl: 'quiz/new_tasks.html',
-                controller: 'TasksController as vm'
             });
         $urlRouterProvider.otherwise('index');
     });
