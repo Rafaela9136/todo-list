@@ -1,19 +1,19 @@
 angular.module('app')
-    .controller('TasksController', ['TaskFactory', '$filter', '$timeout', '$uibModalStack',
-        function(TaskFactory, $filter, $timeout, $uibModalStack) {
+    .controller('TasksController', ['TaskFactory', '$uibModalStack',
+        function(TaskFactory, $uibModalStack) {
             var vm = this;
 
-            vm.algo = "algo";
             vm.tasks = {};
             vm.newTask = {
             	title: "",
             	description: "",
-            	status: "open"
+            	status: "Open"
             };
 
             function init() {
             	getTasks();
             }
+
             init();
 
             function getTasks() {
@@ -37,15 +37,16 @@ angular.module('app')
 
 	        vm.createTask = function() {
 	        	TaskFactory.createTask(vm.newTask);
-	        	vm.close();
+                vm.close();
+                location.reload();
 	        }
 
             vm.solveTask = function(id) {
-                console.log("solveTask " + id);
+                TaskFactory.updateTask(id, {status:"Done"});
             }
 
             vm.deleteTask = function(id) {
-                console.log("deleteTask " + id);
                 TaskFactory.deleteTask(id);
+                getTasks();
             }
         }]);

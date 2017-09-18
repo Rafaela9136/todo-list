@@ -34,8 +34,8 @@ angular.module('app')
                 .catch(handleError);
         };
 
-        function updateTask(task_id) {
-            return $http.put('/tasks/' + task_id)
+        function updateTask(task_id, task) {
+            return $http.put('/tasks/' + task_id, task)
                 .then(handleResponse)
                 .catch(handleError);
         }

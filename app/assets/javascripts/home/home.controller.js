@@ -7,7 +7,7 @@ angular.module('app')
                 templateUrl: 'quiz/new.html',
                 clickOutsideToClose: true,
                 fullscreen: $scope.customFullscreen,
-                controller: 'TasksController as vm'
+                controller: 'TasksController as ctrl'
             });
 		};
 

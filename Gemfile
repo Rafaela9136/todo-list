@@ -13,15 +13,9 @@ gem 'angular-ui-bootstrap-rails'
 
 
 # *** Gems for Angular *** #
-
-# Respond to ActiveRecord error in JSON format
 gem 'responders'
-# Convert ruby database in JSON format
 gem 'active_model_serializers'
-# Manage frontend assets
 gem 'bower-rails'
-# Allows to write HTML code with in js assets folder
-# and compile HTML into assets pipeline
 gem 'angular-rails-templates'
 
 group :development, :test do
@@ -38,7 +32,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 

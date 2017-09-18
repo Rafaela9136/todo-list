@@ -5,13 +5,20 @@
   </div>
   <div class="modal-body">
     <form novalidate class="simple-form">
-      <label class="form-control-label" >Title </label><input class="form-control" type="text" ng-model="vm.newTask.title"/><br/>
-      <label class="form-control-label">Description </label><textarea class="form-control" type="text" ng-model="vm.newTask.description" /><br/>
-      <label class="form-control-label">Status </label><input class="form-control" type="text" ng-model="vm.newTask.status"/><br/>
+      <label class="form-control-label" >Title </label><input class="form-control" type="text" ng-model="ctrl.newTask.title"/><br/>
+      <label class="form-control-label">Description </label><textarea class="form-control" type="text" ng-model="ctrl.newTask.description" /><br/>
+
+      <label class="form-control-label">Status </label>
+      <select class="form-control" ng-model="ctrl.newTask.status">
+        <option>Open</option>
+        <option>In progress</option>
+        <option>Done</option>
+      </select>
+      
   </div>
   <div class="modal-footer">
-    <input type="submit" class="btn btn-outline-dark" ng-click="vm.close()" value="Cancel" />
-    <input type="submit" class="btn btn-outline-dark" ng-click="vm.createTask()" value="Create" />
+    <input type="submit" class="btn btn-outline-dark" ng-click="ctrl.close()" value="Cancel" />
+    <input type="submit" class="btn btn-outline-dark" ng-click="ctrl.createTask()" value="Create" />
   </div>
   </form>
 </ng-template>
