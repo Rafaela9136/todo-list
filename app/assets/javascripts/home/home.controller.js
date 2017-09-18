@@ -4,7 +4,7 @@ angular.module('app')
 
 		vm.openDialog = function() {
             $uibModal.open({
-                templateUrl: 'quiz/new.html',
+                templateUrl: 'task/new.html',
                 clickOutsideToClose: true,
                 fullscreen: $scope.customFullscreen,
                 controller: 'TasksController as ctrl'

@@ -8,7 +8,7 @@ angular.module('app')
             })
             .state('home.index', {
                 url: 'index',
-                templateUrl: 'quiz/tasks.html',
+                templateUrl: 'task/tasks.html',
                 controller: 'TasksController as vm'
             });
         $urlRouterProvider.otherwise('index');
