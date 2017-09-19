@@ -1,32 +1,19 @@
 default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter: postgresql
-  encoding: utf8
+  <<: *default
   database: todo_development
-  pool: 5
-  username: 
-  password:
 
-test: &TEST
-  adapter: postgresql
-  encoding: utf8
+test:
+  <<: *default
   database: todo_test
-  pool: 5
-  username: 
-  password:
 
 production:
-  adapter: postgresql
-  encoding: utf8
-  host: ec2-54-225-88-199.compute-1.amazonaws.com
+  <<: *default
   database: d65s4lrja5g1pb
-  pool: 5432
   username: dzzsxncmddqejh
-  password: a723827fab99a5a629aa1912eae3d482054cd6a42772c4f3f948e79c75d9ff7f
-
-cucumber:
-  <<: *TEST
+  password: <%= ENV['a723827fab99a5a629aa1912eae3d482054cd6a42772c4f3f948e79c75d9ff7f'] %>
+  url: <%= ENV['postgres://dzzsxncmddqejh:a723827fab99a5a629aa1912eae3d482054cd6a42772c4f3f948e79c75d9ff7f@ec2-54-225-88-199.compute-1.amazonaws.com:5432/d65s4lrja5g1pb'] %>
