@@ -22,10 +22,11 @@ test: &TEST
 production:
   adapter: postgresql
   encoding: utf8
-  database: todo_production
-  pool: 5
-  username: 
-  password:
+  host: ec2-54-225-88-199.compute-1.amazonaws.com
+  database: d65s4lrja5g1pb
+  pool: 5432
+  username: dzzsxncmddqejh
+  password: a723827fab99a5a629aa1912eae3d482054cd6a42772c4f3f948e79c75d9ff7f
 
 cucumber:
   <<: *TEST
